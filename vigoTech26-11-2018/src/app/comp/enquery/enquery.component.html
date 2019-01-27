@@ -1,0 +1,188 @@
+<div fxLayout="column" fxLayoutGap="0px" fxLayout.xs="column" fxLayoutAlign="center center" style="background-color:aliceblue; padding-top: 1%; padding-bottom: 2%;">
+
+  <span ngClass.xs='XsHeading' class="span4">Enquiry</span> <br>
+  <mat-divider style="background-color:rgba(255, 255, 255, 0.61);width: 100%;"></mat-divider>                    
+</div>
+
+<div fxLayout="row" fxLayoutGap="0px" fxLayout.xs="column" fxLayoutAlign.xs="start center" fxLayoutAlign="center stretch" style="background-color:aliceblue; padding-top: 1%; padding-bottom: 4%;">
+  <div fxLayout="row" fxLayoutGap.xs="1px"  style="padding-right: 4%;">
+    <span class="span1"><i class="material-icons">perm_identity</i></span> 
+    <mat-form-field class="example-full-width">     <!--Name-->
+        <input matInput placeholder="Your Name." required>    
+      </mat-form-field>
+                
+ </div>
+ <div fxLayout="row" fxLayoutGap.xs="1px" style="padding-right: 4%;">
+      <span class="span1"><i class="material-icons"> phone</i></span> 
+        
+               <mat-form-field class="example-full-width">    <!--Mobile No-->
+                <input matInput  #input maxlength="10" placeholder="Mobile No." required>
+                <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint>
+              </mat-form-field>
+ </div>
+ <div fxLayout="row" fxLayoutGap.xs="1px"  >
+      <span class="span1"><i class="material-icons">mail_outline</i></span> 
+       
+      <mat-form-field class="example-full-width">         <!--Email-->
+        <input matInput placeholder="Email" [formControl]="emailFormControl"[errorStateMatcher]="matcher">
+        <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+          Please enter a valid email address
+        </mat-error>
+        <mat-error *ngIf="emailFormControl.hasError('required')">
+          Email is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+
+  </div>  
+</div>
+
+<div fxLayout="row" fxLayoutGap="0px" fxLayout.xs="column" fxLayoutAlign.xs="start center" fxLayoutAlign="center stretch" style="background-color:aliceblue; padding-top: 1%; padding-bottom: 0%;">
+  <div fxLayout="row" fxLayoutGap.xs="1px" style="padding-right: 4%;">
+    <span class="span1"><i class="material-icons">playlist_add_check</i></span> 
+    <mat-form-field>
+      <mat-select placeholder="Select Course" [formControl]="toppings" multiple> <!--Select Course-->
+       <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+      </mat-select>
+     </mat-form-field>           
+
+ </div>
+ <div fxLayout="row" fxLayoutGap.xs="1px" style="padding-right: 4%;">
+      <span class="span1"><i class="material-icons">check</i></span> 
+        
+            <mat-checkbox> Want a Demo Class !</mat-checkbox>
+ </div>
+ <div fxLayout="row" fxLayoutGap.xs="1px"  >
+      <span class="span1"><i class="material-icons">create</i></span> 
+       
+      <mat-form-field class="example-full-width">      <!--Leave Enquiry-->
+       <input matInput #message maxlength="256" placeholder="Leave a enquiry here" required>
+           <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
+          </mat-form-field>
+
+  </div>  
+</div>
+
+<div fxLayout="row" fxLayoutGap="15px" fxLayout.xs="row"  fxLayoutAlign="center center" style="background-color:aliceblue; padding-top: 1%; padding-bottom: 3%;">
+ <div fxLayout="column" ><button mat-stroked-button color="primary">Submit</button> </div>
+ <div fxLayout="column" ><button mat-stroked-button color="accent">Clear</button> </div>                 
+</div>        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container">
+  <div fxLayout="column" class="wd100" fxLayoutAlign="space-around center">
+  <p class="text-primary" style="font-size:30px;">Register </p>
+  </div>
+  
+  <form #signUpForm="ngForm" (ngSubmit)="signUpForm.valid && onSubmit(signUpForm)">
+     
+    <mat-radio-group class="example-radio-group" #roleType="ngModel" name="roleType" [(ngModel)]="userService.selectedUser.roleType" required>
+
+        <div fxLayout="row" class="wd100" fxLayoutAlign="center center ">
+            <div fxLayout="column" class="wd100" fxLayoutAlign="space-around center">Login as:</div>
+            <div fxLayout="row" class="wd100" fxLayoutAlign="space-around center">
+        <mat-radio-button class="example-radio-button" *ngFor="let flag of flags" [value]="flag">
+        {{flag}}
+        </mat-radio-button>
+      </div>
+    </div>
+    <div *ngIf="signUpForm.submitted && roleType.errors" fxLayoutAlign="center center">
+    <div fxLayout="row"  >
+        <label *ngIf="roleType.errors.required" class="validation-message" style="color:red;">This field is required.</label>
+  </div>
+      </div>
+      </mat-radio-group>
+   
+
+
+    <div fxLayout="column" class="wd100" fxLayoutAlign="space-around center">
+      <mat-form-field class="wd80">
+        <input matInput type="text" #fullName="ngModel" [(ngModel)]="userService.selectedUser.fullName" name="fullName" placeholder="Full Name"
+        required  [ngClass]="{'invalid-textbox' :signUpForm.submitted && !fullName.valid }">  
+        <div *ngIf="signUpForm.submitted && !fullName.valid">
+          <label class="validation-message" style="color:red;">This field is required.</label>
+        </div>
+      </mat-form-field>
+
+      <mat-form-field class="wd80">
+              <input matInput type="text" #email="ngModel" [(ngModel)]="userService.selectedUser.email" name="email" placeholder="Email"
+              required [pattern]="emailRegex"  [ngClass]="{'invalid-textbox' :signUpForm.submitted && !email.valid }">  
+              <div *ngIf="signUpForm.submitted && email.errors">
+                <label *ngIf="email.errors.required" class="validation-message" style="color:red;">This field is required.</label>
+                <label *ngIf="email.errors.pattern" class="validation-message" style="color:red;">Invalid email address.</label>
+              </div>
+      </mat-form-field>
+
+      <mat-form-field class="wd80">
+          <input matInput type="password" #password="ngModel" [(ngModel)]="userService.selectedUser.password" name="password" placeholder="Password"
+minlength="4" required [ngClass]="{'invalid-textbox' :signUpForm.submitted && !password.valid }">
+          <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          <div *ngIf="signUpForm.submitted && password.errors">
+            <label *ngIf="password.errors.required" class="validation-message" style="color:red;">This field is required.</label>
+            <label *ngIf="password.errors.minlength" class="validation-message" style="color:red;">Enter atleast 4 characters.</label>
+          </div>
+      </mat-form-field>
+    </div>
+      <div fxLayout="row" class="wd100" fxLayoutAlign="space-around center">
+      
+      <!-- <button mat-raised-button color="primary" type="submit" (click)="registerUser()">Register</button> -->
+      <button mat-raised-button color="primary" type="submit" value="Sign Up">Register</button>
+      <button mat-raised-button color="primary" type="reset" (click)="resetForm()">Reset</button>
+      <button mat-raised-button color="accent" type="reset" (click)="onNoClick()">Cancle</button>
+     </div>
+    </form>
+  </div>
+  
+  <div class="alert" *ngIf="serverErrorMessages" style="color:red;">
+    {{serverErrorMessages}}
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  

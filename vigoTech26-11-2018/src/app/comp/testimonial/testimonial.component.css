@@ -1,0 +1,37 @@
+.slide{
+
+    width: 10%;
+    height: 120pt;
+    /* margin-left: 2%; */
+    border-radius: 100px;
+    /* z-index: +1; */
+    position: absolute;
+    /* top: 10%;
+    left: 5.11%; */
+    
+      }
+      
+.slide2{
+  width: 80%;
+}
+
+
+    
+.span4{
+      text-decoration: none;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 40px;
+      font:bold;
+      font-weight: bolder;
+      color: rgba(111, 0, 255, 0.733);
+  }   
+
+/****************************Responsive Section Start****************** */
+.XsHeading{
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font:bold;
+  font-weight: bolder;
+  color: rgba(111, 0, 255, 0.733);
+}

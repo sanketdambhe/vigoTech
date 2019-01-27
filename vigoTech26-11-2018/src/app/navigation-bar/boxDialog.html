@@ -1,0 +1,50 @@
+<div class="container">
+  <form #signInForm="ngForm" (ngSubmit)="signInForm.valid && onSubmit(signInForm)">
+    <div fxLayout="column" class="wd100" fxLayoutAlign="space-around center">
+      <p class="text-primary" style="font-size:30px;">Login </p>
+      <div fxLayout="row" class="wd100" fxLayoutAlign="center center">
+        <mat-radio-group class="example-radio-group" #roleType="ngModel" name="roleType" [(ngModel)]="model.roleType"
+          required>
+          <div fxLayout="row" class="wd100" fxLayoutAlign="space-around center ">
+            <div fxLayout="column" class="wd100" fxLayoutAlign="space-around center">Login as:</div>
+            <div fxLayout="row" class="wd100" fxLayoutAlign="space-around center">
+              <mat-radio-button class="example-radio-button" *ngFor="let flag of flags" [value]="flag">
+                {{flag}}
+              </mat-radio-button>
+            </div>
+          </div>
+          <div *ngIf="signInForm.submitted && roleType.errors" fxLayoutAlign="center center">
+            <div fxLayout="row">
+              <label *ngIf="roleType.errors.required" class="validation-message" style="color:red;">This field is
+                required.</label>
+            </div>
+          </div>
+        </mat-radio-group>
+      </div>
+    </div>
+    <div fxLayout="column" class="wd100" fxLayoutAlign="space-around center">
+      <mat-form-field class="wd80">
+        <input matInput type="text" name="email" #email="ngModel" [(ngModel)]="model.email" placeholder="Email"
+          [pattern]="emailRegex" required [ngClass]="{'invalid-textbox' :signInForm.submitted && !email.valid }">
+        <div *ngIf="signInForm.submitted && email.errors?.pattern">
+          <label class="validation-message" style="color:red;">Invalid email address.</label>
+        </div>
+      </mat-form-field>
+      <mat-form-field class="wd80">
+        <input matInput type="password" name="password" #password="ngModel" [(ngModel)]="model.password" placeholder="Password"
+          required minlength="4" [ngClass]="{'invalid-textbox' :signInForm.submitted && !password.valid }" [type]="hide ? 'password' : 'text'">
+        <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        <div *ngIf="signInForm.submitted && password.errors?.minlength">
+          <label class="validation-message" style="color:red;">Minimum 4 characters.</label>
+        </div>
+      </mat-form-field>
+    </div>
+    <div fxLayout="row" class="wd100" fxLayoutAlign="space-around center">
+      <button mat-raised-button color="primary" type="submit" value="Sign In">Submit</button>
+      <button mat-raised-button color="accent" type="reset" (click)="onNoClick()">Cancle</button>
+    </div>
+  </form>
+  <div class="alert" *ngIf="serverErrorMessages" style="color:red;">
+    <i class="material-icons">error_outline</i> {{serverErrorMessages}}
+  </div>
+</div>

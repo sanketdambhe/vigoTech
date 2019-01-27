@@ -1,0 +1,105 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+html, body { height: 100%; }
+body { margin: 0; font-family: 'Roboto', sans-serif; }
+
+
+
+/* Width *//* Width *//* Width *//* Width *//* Width *//* Width *//* Width *//* Width *//* Width */
+.wd100 {
+    width: 100%;
+  }
+  
+  .wd80{
+    width: 80%;
+  }
+  
+  .wd50 {
+    width: 50%;
+  }
+  .wd40 {
+    width: 40%;
+  }
+
+  .wd20 {
+     width: 20%;
+  }
+
+  .wd10 {
+    width: 10%;
+  }
+  .wd5 {
+    width: 5%;
+   }
+  
+  .wd4 {
+     width: 4%;
+   }
+
+  .wd2 {
+     width: 2%;
+   }
+
+   .wd1 {
+     width: 1%
+   }
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

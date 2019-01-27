@@ -1,0 +1,47 @@
+.span1{
+    text-decoration: none;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    font:bold;
+}
+.span2{
+    text-decoration: none;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 15px;
+    font:bold;
+}
+.span3{
+    text-decoration: none;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 25px;
+    font:bold;
+}
+.span4{
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    font:bold;
+    font-weight: bolder;
+    color: rgba(111, 0, 255, 0.733);
+
+}   
+
+
+.example-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .example-container > * {
+    width: 100%;
+  }
+  
+  /****************************Responsive Section Start****************** */
+.XsHeading{
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font:bold;
+    font-weight: bolder;
+    color: rgba(111, 0, 255, 0.733);
+  }

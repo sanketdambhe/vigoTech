@@ -1,0 +1,52 @@
+
+
+
+
+<!-- 
+1<ui-switch [(ngModel)]="enable"></ui-switch> 2<ui-switch checked></ui-switch><ui-switch [checked]="false"></ui-switch>
+
+3<ui-switch disabled></ui-switch><ui-switch checked [disabled]="true"></ui-switch> 4<ui-switch (change)="onChange($event)"></ui-switch>
+
+5<ui-switch size="small"></ui-switch><ui-switch size="large"></ui-switch>6<ui-switch reverse></ui-switch>
+
+7<ui-switch color="red"></ui-switch>8<ui-switch switchColor="#fcfcfc"></ui-switch>
+9<ui-switch defaultBgColor="red"></ui-switch>10<ui-switch defaultBoColor="black"></ui-switch>
+11<ui-switch labelOn="Yes" labelOff="No"></ui-switch> -->
+
+
+
+<!-- Home Section Start -->
+<div fxLayout="row" fxLayoutGap="0px" fxLayout.xs="column" fxLayoutAlign="space-around center">
+            <div fxLayout="column" fxLayout.xs="column" fxLayoutAlign="center stretch" class="card1" style="z-index:-1;">    
+                   <mat-card class="card" >
+                      <!-- <mat-card-content >  -->
+                    <img mat-card-image ngClass.xs="img1" ngClass.sm="img1" ngclass="img" src="src\assets\main_page2.jpg">
+                    <!-- <img mat-card-image class="img" src="src\assets\vigo.jpg">  -->
+                    
+                    <a href="#" ngClass.xs='XsName' ngClass.sm='span1' ngClass.gt-sm="span1"><i>HURRY UP !!! VERY FEW SEATS ARE LEFT</i></a> 
+                    <a href="#" ngClass.xs='XsSubname' ngClass.sm='span2' ngClass.gt-sm="span2">RESERVE 6 DAYS </a>
+                      <!-- </mat-card-content>  -->
+                    </mat-card>
+          </div>
+ </div>
+ <!-- Home Section End -->
+  <!-- About us Section fStart -->
+ <div fxLayout="column" fxLayoutGap="0px" fxLayout.xs="column" fxLayoutAlign="center center"  style="background-color: aliceblue; padding-top: 2%; padding-bottom: 1%;">
+    <span ngClass.xs="XsHeading"  class="span4">About Us</span> 
+    <mat-divider style="background-color:rgba(32, 31, 31, 0.199);width: 70%;"></mat-divider> <br>                    
+</div>
+<div fxLayout="column" fxLayoutGap="0px"  fxLayoutGap="5%;" fxLayout.xs="column" fxLayoutAlign="center stretch"  style="background-color: aliceblue; padding-top: 1%; padding-bottom: 5%;">
+    <span ngClass.xs='XsPara'  class="span3">Arc Technologies And Institutions is an First in Class Eduction center for all Those who want to achive there Dream Goal in life
+        You will get to leran all major skills in today's it industry to get the dream job you want't......................... <span style="color:rgba(0, 0, 255, 0.658) "><a routerLink="/aboutus" routerLinkActive="active"> Read more</a></span></span>              
+</div>
+  <!-- About us Section End -->
+
+
+
+
+<app-technologies></app-technologies>
+<app-packages></app-packages>
+<app-timing></app-timing>
+<app-testimonial></app-testimonial>
+<app-gallary></app-gallary>
+<app-enquery></app-enquery>

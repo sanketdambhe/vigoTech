@@ -1,0 +1,107 @@
+<div style="height: auto; ">
+  <!-- <mat-toolbar color="primary" style="z-index: 2; position: fixed;"> -->
+      <mat-toolbar style="color:rgba(111, 0, 255, 0.733); background-color:white; " >
+    <mat-toolbar-row>
+      <button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm>
+        <mat-icon>menu</mat-icon>
+      </button>
+      <img  ngClass.xs='XsLogo'  ngClass.sm='lgLogo' ngClass.gt-sm='lgLogo' src="src\assets\logo\oie_transparent.png">
+      <!-- <span>Vigo Technoworld Private Limited </span> -->
+      <span class="example-spacer"></span>
+      <div fxShow="true" fxHide.lt-md="true">
+        <!-- The following menu items will be hidden on both SM and XS screen sizes -->
+        <a mat-button routerLink="home" routerLinkActive="active">
+          <mat-icon class="example-icon" >home</mat-icon>
+          Home
+        </a>
+        <a mat-button routerLink="test" routerLinkActive="active">
+          <mat-icon class="example-icon" >test</mat-icon>
+          Test
+        </a>
+        <a href="#"  mat-button routerLink="gallary" routerLinkActive="active" >
+            <mat-icon class="example-icon">image</mat-icon>
+           Gallary
+          </a>
+        <a href="#"  mat-button routerLink="enquery" routerLinkActive="active">
+          <mat-icon class="example-icon">message</mat-icon>
+          Enquery
+        </a>
+        <a href="#" *ngIf='userRole === "admin"' mat-button routerLink="adminprofile" routerLinkActive="active">
+          <mat-icon class="example-icon">message</mat-icon>
+          Admin Profile
+        </a>
+        <a href="#" *ngIf='userRole === "student"' mat-button routerLink="userprofile" routerLinkActive="active">
+          <mat-icon class="example-icon">message</mat-icon>
+          User Profile
+        </a>
+        <a  mat-button *ngIf="!userService.isLoggedIn()" (click)="login()" routerLinkActive="active">
+          <mat-icon class="example-icon">account_circle</mat-icon>
+          Login
+        </a>
+        <a  mat-button *ngIf="!userService.isLoggedIn()" (click)=" register()" routerLinkActive="active">
+            <mat-icon class="example-icon">account_circle</mat-icon>
+            Register
+          </a>
+        <a  mat-button *ngIf="userService.isLoggedIn()" (click)="onLogout()" value="Logout" >
+          <mat-icon class="example-icon">account_circle</mat-icon>
+          Logout
+        </a>
+  
+        
+        <!-- <a mat-button routerLink="technologies" routerLinkActive="active">
+            <mat-icon class="example-icon" >home</mat-icon>
+            Technologies
+          </a>
+          <a mat-button routerLink="packages" routerLinkActive="active">
+              <mat-icon class="example-icon" >home</mat-icon>
+              Packages
+            </a>
+            <a mat-button routerLink="timing" routerLinkActive="active">
+                <mat-icon class="example-icon" >home</mat-icon>
+                Timing
+              </a>
+              <a mat-button routerLink="testimonials" routerLinkActive="active">
+                  <mat-icon class="example-icon" >home</mat-icon>
+                 Testimonials
+                </a>
+
+            <a href="#" mat-button routerLink="aboutus" routerLinkActive="active">
+            <mat-icon class="example-icon">account_box</mat-icon>
+           About Us
+          </a> -->
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+  <mat-sidenav-container fxFlexFill class="sidenav-container">
+    <mat-sidenav #sidenav class="sidenav">
+      <mat-nav-list>
+        <a  (click)="sidenav.toggle()" mat-list-item routerLink="home" routerLinkActive="active">
+          <mat-icon>notifications</mat-icon>
+         Home
+        </a>
+        <br><br>
+        <a (click)="sidenav.toggle()" mat-list-item routerLink="register" routerLinkActive="active">
+          <mat-icon>message</mat-icon>
+          Register</a>
+        <br><br>
+        <a (click)="sidenav.toggle()" mat-list-item routerLink="gallary" routerLinkActive="active">
+          <mat-icon>account_box</mat-icon>
+         Gallery
+        </a>
+        <br><br>
+        <a (click)="sidenav.toggle()" mat-list-item routerLink="aboutus" routerLinkActive="active" >
+          <mat-icon>lock</mat-icon>
+          About Us
+        </a>
+        <br><br>
+        <a (click)="sidenav.toggle()" mat-list-item>
+          <mat-icon>close</mat-icon> Close
+        </a>
+        <br><br>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content fxFlexFill> <!-- Main content -->
+                                     <ng-content> </ng-content></mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

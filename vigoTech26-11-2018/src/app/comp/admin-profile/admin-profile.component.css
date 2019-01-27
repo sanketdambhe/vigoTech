@@ -1,0 +1,10 @@
+.label {
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font:bold;
+    font-weight: bolder;
+    /* color: rgba(111, 0, 255, 0.733); */
+    color: blue;
+
+}

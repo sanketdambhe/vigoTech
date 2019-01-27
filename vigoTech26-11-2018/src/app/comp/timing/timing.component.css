@@ -1,0 +1,42 @@
+/* timing section start  */
+.card{
+    transition: none !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+  .span4{
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    font:bold;
+    font-weight: bolder;
+    color: rgba(111, 0, 255, 0.733);
+}   
+.span5{
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    font:bold;
+    font-weight: bolder;
+    /* color: rgba(111, 0, 255, 0.733); */
+  }   
+  .span6{
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    font:bold;
+    /* font-weight: bolder; */
+    /* color: rgba(111, 0, 255, 0.733); */
+  }   
+  
+  /* timing section end  */
+
+  /****************************Responsive Section Start****************** */
+  .XsHeading{
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font:bold;
+    font-weight: bolder;
+    color: rgba(111, 0, 255, 0.733);
+  }

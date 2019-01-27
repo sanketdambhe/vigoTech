@@ -1,0 +1,24 @@
+.span2{
+    text-decoration: none;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    font:bold;
+    color: red;
+}
+.span3{
+    text-decoration: none;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    font:bold;
+    
+}
+.span4{
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    font:bold;
+    font-weight: bolder;
+    color: rgba(111, 0, 255, 0.733);
+
+}   
+

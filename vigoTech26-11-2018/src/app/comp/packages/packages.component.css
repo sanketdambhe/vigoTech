@@ -1,0 +1,39 @@
+/* packages section start */
+.card{
+    transition: none !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+.span4{
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    font:bold;
+    font-weight: bolder;
+    color: rgba(111, 0, 255, 0.733);
+}   
+.red{
+    max-width: 400px;
+    height: 300px;
+  }
+  .yellow{
+  
+  max-width: 420px;
+  /* border: 8px solid #663399a6; */
+  border: 8px solid skyblue;
+  height: 300px;
+  
+  /* height: 300px; */
+  /* width: 32%; */
+  }
+  /* packages section end */
+
+/****************************Responsive Section Start****************** */
+  .XsHeading{
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font:bold;
+    font-weight: bolder;
+    color: rgba(111, 0, 255, 0.733);
+  }
